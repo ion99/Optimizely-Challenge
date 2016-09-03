@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OuiBounce Testing Page</title>
+
+    <!-- Example page base styling -->
+    <!-- Don't worry abou this     -->
+    <style>
+      body {
+        background-color: #F0F1F2;
+        color: #2E4052;
+        min-height: 500px;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        font-family: sans-serif;
+      }
+    </style>
+
+    <!-- Add the OuiBounce CSS & Font -->
+    <!-- <link rel="stylesheet" href="ouibounce.min.css"> -->
+    <link rel="stylesheet" href="styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Load jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
+
+    <!-- Add OuiBounce JS -->
+    <!-- <script src="../build/ouibounce.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.12/ouibounce.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Example page instructions -->
+    <h1>Try leaving this page to fire OuiBounce</h1>
+
+    <!-- OuiBounce Modal -->
+    <div id="ouibounce-modal">
+      <div class="underlay"></div>
+      <div class="modal">
+        <div class="modal-title">
+          <h2>WAIT! SPECIAL OFFER FOR [CITY] RESIDENTS...<br>Claim your instant discount before the timer runs out!</h2>
+        </div>
+
+          <div class="clock" style="padding-left: 50px;"></div>
+
+            <script type="text/javascript">
+              var clock = $('.clock').FlipClock(3600, {
+                countdown: true
+              });
+            </script>
+        
+
+        <div class="modal-footer">
+          <button>CLAIM DISCOUNT</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example page JS        -->
+    <!-- Used to fire the modal -->
+    <script>
+
+      // if you want to use the 'fire' or 'disable' fn,
+      // you need to save OuiBounce to an object
+      var _ouibounce = ouibounce(document.getElementById('ouibounce-modal'), {
+        aggressive: true,
+        timer: 0,
+        callback: function() { console.log('ouibounce fired!'); }
+      });
+
+      $('body').on('click', function() {
+        $('#ouibounce-modal').hide();
+      });
+
+      $('#ouibounce-modal .modal-footer').on('click', function() {
+        $('#ouibounce-modal').hide();
+      });
+
+      $('#ouibounce-modal .modal').on('click', function(e) {
+        e.stopPropagation();
+      });
+    </script>
+  </body>
+</html>
