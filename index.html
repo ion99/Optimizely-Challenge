@@ -33,14 +33,20 @@
 
   <body>
     <!-- Example page instructions -->
-    <h1>Try leaving this page to fire OuiBounce</h1>
-
+    <h1>Example page</h1>
+    <script>
+    $(document).ready(function(){
+     $.getJSON("https://api.wunderground.com/api/c451ff398a91d3b1/forecast/conditions/q/autoip.json", function(data){
+       console.log("Yahooo", data.current_observation.display_location.full);
+      $(".modal-title").append("<h2>WAIT! SPECIAL OFFER FOR" +  data.current_observation.display_location.full + "RESIDENTS...<br>Claim your instant discount before the timer runs out!</h2>") 
+});
+    </script>
     <!-- OuiBounce Modal -->
     <div id="ouibounce-modal">
       <div class="underlay"></div>
       <div class="modal">
         <div class="modal-title">
-          <h2>WAIT! SPECIAL OFFER FOR [CITY] RESIDENTS...<br>Claim your instant discount before the timer runs out!</h2>
+         <!--  <h2>WAIT! SPECIAL OFFER FOR [CITY] RESIDENTS...<br>Claim your instant discount before the timer runs out!</h2> -->
         </div>
 
           <div class="clock" style="padding-left: 50px;"></div>
