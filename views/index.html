@@ -1,32 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OuiBounce Testing Page</title>
-
-    <!-- Example page base styling -->
-    <!-- Don't worry abou this     -->
-    <style>
-      body {
-        background-color: #F0F1F2;
-        color: #2E4052;
-        min-height: 500px;
-        padding: 0;
-        -webkit-font-smoothing: antialiased;
-        font-family: sans-serif;
-      }
-    </style>
-
-    <!-- Add the OuiBounce CSS & Font -->
-    <!-- <link rel="stylesheet" href="ouibounce.min.css"> -->
+    <title>Optimizely Challenge</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-
-    <!-- Load jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.css"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
-
-    <!-- Add OuiBounce JS -->
     <!-- <script type="text/javascript" src="javascript/ouibounce.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.12/ouibounce.min.js"></script>
   </head>
@@ -36,7 +16,7 @@
     <h1>Example page</h1>
     <script>
     $(document).ready(function(){
-      // function getLocalWeather(){
+    
      $.getJSON("https://api.wunderground.com/api/c451ff398a91d3b1/forecast/conditions/q/autoip.json", function(data){
        console.log("Yahooo", data.current_observation.display_location.full);
       $(".modal-title").append("<h2><b>WAIT! SPECIAL OFFER FOR " +  "<span class='city'>" + data.current_observation.display_location.full + "</span>" + " RESIDENTS...</b></h2><h1><b>Claim your instant discount before the timer runs out!</b></h1>") 
@@ -48,7 +28,6 @@
       <div class="underlay"></div>
       <div class="modal">
         <div class="modal-title">
-          <!-- <h2>WAIT! SPECIAL OFFER FOR [CITY] RESIDENTS...<br>Claim your instant discount before the timer runs out!</h2> -->
         </div>
 
           <div class="clock" style="padding-left: 50px;"></div>
@@ -65,13 +44,7 @@
         </div>
       </div>
     </div>
-
-    <!-- Example page JS        -->
-    <!-- Used to fire the modal -->
     <script>
-
-      // if you want to use the 'fire' or 'disable' fn,
-      // you need to save OuiBounce to an object
       var _ouibounce = ouibounce(document.getElementById('ouibounce-modal'), {
         aggressive: true,
         timer: 0,
