@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ion99/Optimizely-Challenge/issues"
   },
-  "homepage": "https://github.com/ion99/Optimizely-Challenge#readme"
+  "homepage": "https://github.com/ion99/Optimizely-Challenge#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
