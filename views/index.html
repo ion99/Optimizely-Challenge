@@ -27,7 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
 
     <!-- Add OuiBounce JS -->
-    <script type="text/javascript" src="javascript/ouibounce.min.js"></script>
+    <!-- <script type="text/javascript" src="javascript/ouibounce.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.12/ouibounce.min.js"></script>
   </head>
 
@@ -39,7 +39,7 @@
       // function getLocalWeather(){
      $.getJSON("https://api.wunderground.com/api/c451ff398a91d3b1/forecast/conditions/q/autoip.json", function(data){
        console.log("Yahooo", data.current_observation.display_location.full);
-      $(".modal-title").append("<h2>WAIT! SPECIAL OFFER FOR " +  data.current_observation.display_location.full + " RESIDENTS...<br>Claim your instant discount before the timer runs out!</h2>") 
+      $(".modal-title").append("<h2><b>WAIT! SPECIAL OFFER FOR " +  "<span class='city'>" + data.current_observation.display_location.full + "</span>" + " RESIDENTS...</b></h2><h1><b>Claim your instant discount before the timer runs out!</b></h1>") 
     })
 });
     </script>
@@ -61,7 +61,7 @@
         
 
         <div class="modal-footer">
-          <button>CLAIM DISCOUNT</button>
+          <button class="button-link"><span class="claim-discount"><b>CLAIM DISCOUNT</b></span></button>
         </div>
       </div>
     </div>
