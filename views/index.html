@@ -27,7 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
 
     <!-- Add OuiBounce JS -->
-    <!-- <script src="../build/ouibounce.js"></script> -->
+    <script type="text/javascript" src="javascript/ouibounce.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ouibounce/0.0.12/ouibounce.min.js"></script>
   </head>
 
@@ -36,9 +36,11 @@
     <h1>Example page</h1>
     <script>
     $(document).ready(function(){
+      // function getLocalWeather(){
      $.getJSON("https://api.wunderground.com/api/c451ff398a91d3b1/forecast/conditions/q/autoip.json", function(data){
        console.log("Yahooo", data.current_observation.display_location.full);
-      $(".modal-title").append("<h2>WAIT! SPECIAL OFFER FOR" +  data.current_observation.display_location.full + "RESIDENTS...<br>Claim your instant discount before the timer runs out!</h2>") 
+      $(".modal-title").append("<h2>WAIT! SPECIAL OFFER FOR " +  data.current_observation.display_location.full + " RESIDENTS...<br>Claim your instant discount before the timer runs out!</h2>") 
+    })
 });
     </script>
     <!-- OuiBounce Modal -->
@@ -46,7 +48,7 @@
       <div class="underlay"></div>
       <div class="modal">
         <div class="modal-title">
-         <!--  <h2>WAIT! SPECIAL OFFER FOR [CITY] RESIDENTS...<br>Claim your instant discount before the timer runs out!</h2> -->
+          <!-- <h2>WAIT! SPECIAL OFFER FOR [CITY] RESIDENTS...<br>Claim your instant discount before the timer runs out!</h2> -->
         </div>
 
           <div class="clock" style="padding-left: 50px;"></div>
