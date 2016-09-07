@@ -4,24 +4,29 @@
         min-height: 500px;
         padding: 0;
         -webkit-font-smoothing: antialiased;
-        font-family: sans-serif;
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
       }
 
-h1, h2 {
-  padding-right: 2em;
+b {
+  padding: auto;
+  text-align: center;
+}
+h1 {
+  padding-right: 3.5em;
   text-align: center;
 }
 
 #content {
   float: left;
-  width: 3em;
-  height: 7em;
-  margin-top: 7em;
-  margin-left: 1em;
+  width: 4em;
+  height: 9em;
+  margin-top: 2.5em;
+  margin-left: 2em;
 }
 
 .button-link {
-    padding: 20px 55px;
+    padding: 20px 35px;
     background: #F51B1B;
     color: #FFF;
     -webkit-border-radius: 20px;
@@ -40,7 +45,8 @@ h1, h2 {
 }
 .claim-discount {
   font-family: 'Lato', sans-serif;
-  font-size: 45px; 
+  font-size: 45px;
+  font-weight: 900; 
 }
 
 #ouibounce-modal {
@@ -64,9 +70,9 @@ h1, h2 {
   animation: fadein 0.5s;
 }
 #ouibounce-modal .modal {
-  width: 600px;
+  width: 640px;
   height: 400px;
-  background-color: #f0f1f2;
+  background-color: #ffffff;
   z-index: 1;
   position: absolute;
   margin: auto;
@@ -244,6 +250,18 @@ h1, h2 {
 
 /* Get the bourbon mixin from http://bourbon.io */
 /* Reset */
+
+.clock {
+    transform-origin: 0 0;
+    transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: scale(0.75);
+    -o-transform-origin: 0 0;
+    -o-transform: scale(0.75);
+    -moz-transform-origin: 0 0;
+    -moz-transform: scale(0.75);
+}
 .flip-clock-wrapper * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

@@ -3,7 +3,7 @@
   <head>
     <title>Optimizely Challenge</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.css"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
@@ -22,7 +22,7 @@
     
      $.getJSON("https://api.wunderground.com/api/c451ff398a91d3b1/forecast/conditions/q/autoip.json", function(data){
        console.log("Yahooo", data.current_observation.display_location.full);
-      $(".modal-title").append("<h2><b>WAIT! SPECIAL OFFER FOR " +  "<span class='city'>" + data.current_observation.display_location.full + "</span>" + " RESIDENTS...</b></h2><h1><b>Claim your instant discount before the timer runs out!</b></h1>") 
+      $(".modal-title").append("<h2><b>WAIT! SPECIAL OFFER FOR " +  "<span class='city'>" + data.current_observation.display_location.city + "</span>" + " RESIDENTS...</b></h2><img id="content" src="imges/redArrow.png"><h1><b>Claim your instant discount before the timer runs out!</b></h1>") 
     })
 });
     </script> -->
@@ -34,10 +34,10 @@
       <div class="underlay"></div>
       <div class="modal">
         <div class="modal-title">
-        <img id="content" src="imges/redArrow.png">
+        
         </div>
 
-          <div class="clock" style="padding-left: 5.5em;"></div>
+          <div class="clock" style="padding-left: 16.5em; padding-top: 2.5em; margin-top: 2.5em;"></div>
 
             <script type="text/javascript">
               var clock = $('.clock').FlipClock(3600, {
