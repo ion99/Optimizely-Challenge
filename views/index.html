@@ -28,7 +28,7 @@
         </div>
 
           <div class="clock" style="padding-left: 16.5em; padding-top: 2.5em; margin-top: 2.5em;"></div>
-          
+
             <script type="text/javascript">
               var clock = $('.clock').FlipClock(3600, {
                 countdown: true
@@ -45,7 +45,9 @@
       var _ouibounce = ouibounce(document.getElementById('ouibounce-modal'), {
         aggressive: true,
         timer: 0,
-        callback: function() { console.log('ouibounce fired!'); }
+        callback: function() { 
+          console.log('ouibounce fired!'); 
+        }
       });
 
       $('body').on('click', function() {

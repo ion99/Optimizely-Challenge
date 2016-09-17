@@ -11,5 +11,5 @@ app.use(express.static(path.join(__dirname, 'views')));
 // Listen for requests
 var server = app.listen(app.get('port'), function() {
   var port = server.address().port;
-  console.log('Magic is happening right now :) on port ' + port);
+  console.log('Magic is happening right now :) !!!!! on port ' + port);
 });
